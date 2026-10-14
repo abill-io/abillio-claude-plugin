@@ -106,6 +106,9 @@ connection's cached tool list as authority.
 
 On claude.ai and Claude Desktop, invoice and client tools may render an
 interactive card (MCP App). Let the card carry the details and add at most one
-or two sentences. Claude Code does not render cards: the same record data is
-returned as text in the tool result, so summarize from it and never claim a
-card was shown.
+or two sentences. Pass the card tools' optional `language` argument (`lv` or
+`en`, the language the user writes in) so the card and the messages its
+buttons prefill match the conversation. A card button only prefills a message
+the user then sends; treat it as the user's request. Claude Code does not
+render cards: the same record data is returned as text in the tool result, so
+summarize from it and never claim a card was shown.

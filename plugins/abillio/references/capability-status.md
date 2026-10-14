@@ -118,10 +118,18 @@ and simulated payment are not evidence of real human consent or money movement.
 
 - **Interactive cards (MCP Apps):** rendered by ChatGPT, claude.ai and Claude
   Desktop. Claude Code and other text-only hosts receive the same record data
-  as text; summarize from it and never claim a card was displayed.
-- **MCP Events:** available only to hosts negotiating the draft Events
-  protocol (ChatGPT). Claude surfaces are not Events clients; do not offer
-  subscriptions or automatic notifications there.
+  as text; summarize from it and never claim a card was displayed. The card
+  tools accept an optional `language` (`lv`/`en`): pass the language the user
+  is writing in, so the card, its buttons and the messages its buttons prefill
+  follow the conversation rather than the host UI language.
+- **Card buttons on Claude:** a button does not act by itself. It prefills a
+  message in the composer ("Parādi šo Abillio rēķinu: …", "Vēlos labot šo
+  melnrakstu …") and the user sends it; treat such a message as the user's
+  own request. On ChatGPT the same button sends the message directly.
+- **MCP Events:** the server advertises Events only to clients negotiating
+  the draft Events protocol. ChatGPT uses them; claude.ai negotiates that
+  protocol version too but is not documented as an Events client, so do not
+  offer subscriptions or automatic notifications on Claude surfaces.
 - **Skills loading:** in Claude Code the host must allow the `Skill` tool for
   the Abillio workflows to load; without them the server still refuses invalid
   writes and names the rejected fields (`fields` in the refusal), so collect
