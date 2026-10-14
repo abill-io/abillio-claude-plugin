@@ -1,0 +1,19 @@
+{
+  "name": "abillio",
+  "displayName": "Abillio",
+  "version": "0.4.15",
+  "description": "Work with invoices, clients, expenses, freelancers, documents and financial summaries in the Abillio test environment, within your account permissions.",
+  "author": {
+    "name": "Abillio",
+    "url": "https://abill.io"
+  },
+  "homepage": "https://abill.io",
+  "license": "SEE LICENSE IN LICENSE",
+  "keywords": [
+    "abillio",
+    "invoices",
+    "freelancers",
+    "payments"
+  ],
+  "mcpServers": "./.mcp.json"
+}

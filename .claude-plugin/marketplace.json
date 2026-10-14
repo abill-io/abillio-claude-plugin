@@ -1,0 +1,16 @@
+{
+  "name": "abillio",
+  "owner": {
+    "name": "Abillio",
+    "url": "https://abill.io"
+  },
+  "description": "Abillio plugins for Claude: invoices, clients, expenses, freelancers and documents.",
+  "plugins": [
+    {
+      "name": "abillio",
+      "source": "./plugins/abillio",
+      "description": "Work with invoices, clients, expenses, freelancers, documents and financial summaries in the Abillio test environment, within your account permissions.",
+      "version": "0.4.15"
+    }
+  ]
+}
