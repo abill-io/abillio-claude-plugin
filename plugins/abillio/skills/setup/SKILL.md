@@ -31,6 +31,9 @@ filesystem access, local files, API keys, a `connection.json`, a private key,
 a password or a token in chat, and do not run shell commands on the user's
 behalf to "install" the connection. No Python or Abillio source checkout is
 required. Keep routine onboarding explanations short.
+Answer in the language the user writes in (Latvian stays Latvian, including
+after tool results that come back in English); pass the same language to
+card tools that take a `language` argument.
 
 ## Customer connection flow
 
