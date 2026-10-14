@@ -33,6 +33,9 @@ customer connection.
 
 - Resolve a requested invoice or client from returned records. Clarify ambiguous
   matches instead of guessing. Apply the requested date range and timezone.
+- To show one specific invoice, read it with `get_invoice` after resolving its
+  id: the detail carries line items, dates and parties, so the card renders as
+  the invoice document. A list row shows only a summary.
 - Distinguish unpaid from overdue. Use authoritative statuses, due dates and
   outstanding amounts; don't count drafts or cancelled invoices as collectible.
 - Follow pagination before claiming a complete list or total. If scope, field

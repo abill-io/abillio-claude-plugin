@@ -56,7 +56,11 @@ required. Keep routine onboarding explanations short.
    fix; repeatedly asking the user to reconnect will not fix it.
 
 The server owns authorization on every call. On denied access, stop that action
-and explain it; do not bypass the grant. Deployment diagnosis belongs to a
+and explain it; do not bypass the grant. A refusal is a decision about this
+connection's grant, not missing data: never retry the action through another
+Abillio connection or server (even one for the same account) and never ask
+the user to widen access just to finish; tell them which access level or
+Abillio action the step needs and stop. Deployment diagnosis belongs to a
 separate developer task, not customer sign-in. Do not claim the test plugin is a
 public or production release.
 
