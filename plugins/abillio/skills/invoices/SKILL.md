@@ -87,6 +87,10 @@ customer connection.
   Never ask the user for this key, derive it from the invoice contents, or generate
   a new key for a retry. A separately requested new draft gets a new UUID, even
   when its contents are identical.
+- A bare "again" / "vēlreiz" / "atkārto" / "retry" after a write that succeeded
+  is not a request for a second record: say the last action already succeeded
+  (name the record) and ask what to repeat. Only explicit words for another
+  record ("another one", "vēl vienu", "otru rēķinu") create a new draft.
 - After a timeout or `connection_failed`, retry that supported draft tool once
   with the same key and unchanged inputs. The API commits the draft, line items,
   audit event and encrypted response together; a completed retry returns the same
