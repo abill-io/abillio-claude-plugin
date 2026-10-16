@@ -13,7 +13,10 @@ active account is the business or freelancer side; their available operations di
 
 Use `list_engagements`, `get_engagement` and `list_engagement_services` to establish
 the parties, state, accepted services and mandate. The business sends an invitation;
-the freelancer's acceptance and mandate are separate human actions.
+the freelancer's acceptance and mandate are separate human actions. On the business
+side, an engagement's `requirements` is what the freelancer still has to provide
+in Abillio; when issuing in their name is refused, name its due items instead of
+retrying.
 
 `create_engagement`, bulk invitation and resend tools send messages. Before sending,
 prepare the exact recipients and proposed terms; obtain approval if the user has

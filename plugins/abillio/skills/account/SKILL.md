@@ -1,6 +1,6 @@
 ---
 name: account
-description: Review or update Abillio account profile and invoicing preferences, inspect access and activity, or configure notification preferences within the current connection.
+description: Review or update Abillio account profile and invoicing preferences, see what the account still has to provide, inspect access and activity, or configure notification preferences within the current connection.
 ---
 
 # Abillio account settings and activity
@@ -39,3 +39,29 @@ Connection revocation, verification, personal signing and account closure remain
 human UI workflows. Do not display subscription offers or plans, promote upgrades,
 or start subscription checkout. You may explain the current account entitlement
 when a feature is unavailable, without marketing another plan.
+
+## Requirements
+
+`get_requirements` lists what a Freelancer account still has to provide (identity
+verification, a payout method, documents to sign and so on), each with the `link`
+to the Abillio page where it is completed. Call it when the user asks what is left
+to set up, and when a write is refused with `kyc_missing`, `payout_method_missing`,
+`documents_unsigned`, `contract_requirement_pending`, `mandate_missing` or
+`mandate_revoked`; do not retry the refused write. List each `due` item in the
+user's language with its link, naming the company when `company_name` is set,
+and mention each `upcoming` item with its `due_at` date.
+
+`payout_method_missing` on issuing means this draft has no payout method: if the
+list has no `payout_method` item, attach the user's chosen verified method to the
+draft (`list_payout_methods` → `payout_method_id`) or let them choose it in
+Abillio, then issue again. If no item matches the refusal, say what it means and
+that it is resolved in Abillio.
+
+Identity verification, document signatures, the mandate and the member fee are
+the user's to complete in Abillio: never invent a workaround or complete them for
+the user. Billing details are different: a missing address can be filled in here
+with `accounts_patch_profile` when the user gives it, like any requested profile
+change above.
+
+A Business connection has no `get_requirements`: a freelancer's list is the
+`requirements` of their engagement in `list_engagements` or `get_engagement`.
